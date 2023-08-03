@@ -4,6 +4,53 @@
 
 .container{
     margin: 0 auto;
-    max-width: 130rem;
+    max-width: 90rem;
     padding: 1.5rem;
+}
+
+@layer components{
+    .header .container{
+        @apply p-[0rem]
+    }
+    .header .header__brand{
+        @apply lg:flex lg:flex-row lg:items-center lg:gap-[1rem]
+    }
+    .header .header__brand h3{
+        @apply lg:text-[1.1rem]
+    }
+    .header .header__nav{
+        @apply h-[0rem] transition-all lg:h-fit lg:static lg:w-fit
+    }
+    .header .header__nav.open{
+        @apply h-[21rem] overflow-y-scroll lg:h-fit lg:overflow-y-hidden
+    }
+    .header .header__nav ul{
+        @apply lg:flex lg:flex-row lg:items-center lg:pt-[0rem]
+    }
+    .header .header__nav ul li{
+        @apply pl-[.5rem] 
+    }
+    .header .header__nav ul li.srch{
+        @apply lg:hidden
+    }
+    .header .header__nav ul li.dw{
+        @apply bg-blue-700 p-[1rem] lg:hidden
+    }
+    .header .header__wrapper .toggle__menu{
+        @apply lg:hidden
+    }
+    .header .header__wrapper .header__actions{
+        @apply lg:flex lg:items-center 
+    }
+    .header .header__wrapper .header__actions a{
+        @apply lg:text-light lg:font-semibold bg-blue-700 py-[1rem] px-[1rem]
+    }
+    .header .header__wrapper .header__actions input{
+        @apply lg:p-[1rem] lg:bg-[hsl(240,3.94%,24.9%)] lg:text-light outline-none focus:border-[1px solid black] 
+        /* outline-offset-[-2px] outline-[5px] rounded-none */
+    }
+    .header .header__wrapper .header__actions input::placeholder{
+        @apply lg:text-light opacity-70
+
+    }
 }
